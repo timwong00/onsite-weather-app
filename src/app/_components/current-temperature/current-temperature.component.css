@@ -1,0 +1,33 @@
+mat-card {
+  background-color: lightgoldenrodyellow;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  width: 70%;
+}
+
+.center {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+
+.currentTemperature {
+  font-weight: bolder;
+  font-size: 30px;
+}
+
+.bottom-left {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+
+.text-center {
+  text-align: center;
+}
+@media only screen and (min-width: 768px) {
+  mat-card {
+    width: 50%;
+  }
+}

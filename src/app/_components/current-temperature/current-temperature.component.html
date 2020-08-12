@@ -1,0 +1,37 @@
+<mat-card *ngIf="currentTemperatureData; else loading">
+  <mat-card-title>{{ currentTemperatureData.name }} Weather</mat-card-title>
+  <mat-card-subtitle>
+    As of
+    {{
+      convertToTimezone(
+        currentTemperatureData.dt,
+        currentTemperatureData.timezone
+      ) | date: "medium"
+    }}
+  </mat-card-subtitle>
+  <mat-card-content>
+    <div>
+      <p>
+        <span class="currentTemperature">
+          {{ currentTemperatureData.main.temp }}&#8457;
+        </span>
+      </p>
+      <p>Feels Like: {{ currentTemperatureData.main.feels_like }} &#8457;</p>
+      <p>High: {{ currentTemperatureData.main.temp_max }}&#8457;</p>
+      <p>Low: {{ currentTemperatureData.main.temp_min }}&#8457;</p>
+      <div class="bottom-left">
+        <img
+          src="http://openweathermap.org/img/wn/{{ weatherIcon }}@2x.png"
+          alt=""
+        />
+        <p class="text-center">{{ weatherDescription }}</p>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<ng-template #loading>
+  <div class="center">
+    <mat-progress-spinner></mat-progress-spinner>
+  </div>
+</ng-template>
