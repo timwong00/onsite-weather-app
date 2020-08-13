@@ -23,7 +23,7 @@ export class CurrentTemperatureComponent implements OnInit {
   weatherDescription: string;
 
   ngOnInit(): void {
-    this.getCurrentTemperature();
+    this._getCurrentTemperature();
   }
 
   ngOnDestroy(): void {
@@ -31,7 +31,7 @@ export class CurrentTemperatureComponent implements OnInit {
     this._destroy$.unsubscribe();
   }
 
-  public getCurrentTemperature(): void {
+  private _getCurrentTemperature(): void {
     navigator.geolocation.getCurrentPosition((position: Position): void => {
       const LATITUDE: number = position.coords.latitude;
       const LONGITUDE: number = position.coords.longitude;

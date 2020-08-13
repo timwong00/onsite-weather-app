@@ -1,0 +1,42 @@
+<div *ngIf="fiveDayTemperatureData; else loading">
+  <h1 class="center-text">{{ currentCityName }} 5 Day Forecast</h1>
+  <mat-table [dataSource]="fiveDayTemperatureData.list">
+    <ng-container matColumnDef="datetime">
+      <mat-header-cell *matHeaderCellDef> Date/Time </mat-header-cell>
+      <mat-cell *matCellDef="let tempData">
+        {{ getDate(tempData.dt_txt) | date: "medium" }}
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="temp">
+      <mat-header-cell *matHeaderCellDef> Temperature </mat-header-cell>
+      <mat-cell *matCellDef="let tempData">
+        {{ tempData.main.temp }}&#8457;
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="icon">
+      <mat-header-cell *matHeaderCellDef> Icon </mat-header-cell>
+      <mat-cell *matCellDef="let tempData">
+        <img
+          src="http://openweathermap.org/img/wn/{{
+            tempData.weather[0].icon
+          }}.png"
+          alt=""
+        />
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="condition">
+      <mat-header-cell *matHeaderCellDef> Condition </mat-header-cell>
+      <mat-cell *matCellDef="let tempData">
+        {{ tempData.weather[0].description }}
+      </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="tableColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: tableColumns"></mat-row>
+  </mat-table>
+</div>
+
+<ng-template #loading>
+  <div class="center-spinner">
+    <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+  </div>
+</ng-template>

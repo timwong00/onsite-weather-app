@@ -6,12 +6,6 @@ mat-card {
   width: 70%;
 }
 
-.center {
-  position: relative;
-  left: 50%;
-  transform: translate(-50%, 50%);
-}
-
 .currentTemperature {
   font-weight: bolder;
   font-size: 30px;

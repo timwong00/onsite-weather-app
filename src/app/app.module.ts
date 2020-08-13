@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Angular Material Modules
 import { MatCardModule } from '@angular/material/card';
 import { MatRippleModule } from '@angular/material/core';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatTableModule } from '@angular/material/table';
 
 // Components
 import { AppComponent } from './app.component';
@@ -30,9 +32,11 @@ import { WeatherService } from './_services/weather.service';
     AppRoutingModule,
     HttpClientModule,
     NoopAnimationsModule,
+    BrowserAnimationsModule,
     MatCardModule,
     MatRippleModule,
     MatProgressSpinnerModule,
+    MatTableModule,
   ],
   providers: [WeatherService],
   bootstrap: [AppComponent],
