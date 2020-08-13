@@ -1,27 +1,25 @@
 # OnsiteWeatherApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.5.
+# Language / Framework / Extra Modules
 
-## Development server
+JavaScript
+Angular v10.0.5
+Angular Material v10.1.3
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Before running
 
-## Code scaffolding
+Run npm install and add the API key to the src/config.ts file
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Running development server
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Run `ng serve` and navigate to `http://localhost:4200/`.
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `ng test`
 
-## Running end-to-end tests
+The onsite weather application will initially navigate you to the current temperature page where you can view the current temperature at your current location.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+The navigation bar on the top can be used to navigate back and forth to view current temperature and the five day forecast.
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+In the five day forecase page, there will be a table that lists out the five day forecast in three hour increments. The information includes the date/time, temperature, an icon that represents the weather condition and the description of that condition.
